@@ -23,10 +23,10 @@ class Event(models.Model):
 
 class Attendance(models.Model):
     event = models.ForeignKey(
-        to="Event", related_name="attendance_event", on_delete=models.CASCADE
+        to="Event", related_name="event_attendance", on_delete=models.CASCADE
     )
     student = models.ForeignKey(
-        to="student", related_name="attendee", on_delete=models.PROTECT
+        to="student", related_name="student_attendance", on_delete=models.PROTECT
     )
     ATTENDANCE_CHOICES = [
         ("P", "Present"),
